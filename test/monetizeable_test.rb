@@ -12,11 +12,9 @@ end
 class MyObjectTest < MiniTest::Unit::TestCase
   include Monetizable::Lint::Tests
 
-  private
+  test_monetized_fields 'amount'
 
-  def monetized_field
-    'amount'
-  end
+  private
 
   def subject
     @my_object ||= MyObject.new

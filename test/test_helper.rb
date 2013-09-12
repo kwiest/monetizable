@@ -9,4 +9,5 @@ rescue Bundler::GemNotFound => e
   exit!
 end if File.exist?(gemfile)
 
+require 'pry'
 require 'minitest/autorun'

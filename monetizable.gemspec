@@ -22,5 +22,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry"
   spec.add_development_dependency "rake"
   
-  spec.add_dependency "money", "~> 5.1.1"
+  spec.add_dependency 'monetize', '~> 1.9.0'
+  spec.add_dependency "money", "~> 6.13.2"
 end

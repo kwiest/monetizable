@@ -1,5 +1,9 @@
 require_relative "./monetizable/version"
 require 'money'
+require 'monetize'
+
+# Legacy behavior of determining locale by #*_currency attr
+Money.locale_backend = :currency
 
 module Monetizable
   def self.included(base)
@@ -23,7 +27,7 @@ module Monetizable
         raise ArgumentError unless value.respond_to? :to_money
         money = value.to_money
         send "#{field}_cents=", money.cents
-        send "#{field}_currency=", money.currency_as_string
+        send "#{field}_currency=", money.currency.to_s
 
         instance_variable_set "@#{field}", money
       end

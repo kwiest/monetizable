@@ -2,6 +2,9 @@ require_relative "./monetizable/version"
 require 'money'
 require 'monetize'
 
+# Legacy behavior of determining locale by #*_currency attr
+Money.locale_backend = :currency
+
 module Monetizable
   def self.included(base)
     base.send :extend, ClassMethods

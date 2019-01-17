@@ -1,5 +1,6 @@
 require_relative "./monetizable/version"
 require 'money'
+require 'monetize'
 
 module Monetizable
   def self.included(base)
